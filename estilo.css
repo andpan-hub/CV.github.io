@@ -199,6 +199,7 @@ h2 img {
         font-size: 1em;
         font-family: 'Exo', sans-serif;
         color: #092834;
+       
     }
 
     body header {
@@ -207,5 +208,18 @@ h2 img {
 
     main {
         margin-left: -0.5%;
+    }
+    #bloque2 a{
+        margin-left: 2.5em;
+
+    }
+    .certificaciones{
+        margin-left: 2em;
+    }
+    .estudios{
+        margin-left: 2em;
+    }
+    .especialidades{
+        margin-left: 2em;
     }
 }

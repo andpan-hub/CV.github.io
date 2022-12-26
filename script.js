@@ -91,7 +91,7 @@ sidebar.classList.remove('show');
       this.initialStyles ={
         "position": "absolute",
         "display": "block",
-        "pointerEvents": "none",
+         "pointerEvents": "none",
         "z-index": "10000000",
         "fontSize": "16px",
         "will-change": "transform"
