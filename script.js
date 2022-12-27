@@ -1,4 +1,11 @@
-  
+let menu = document.querySelector('.menuX');
+function toggleMenu (event) {
+  this.classList.toggle('is-active');
+  document.querySelector( ".menu" ).classList.toggle('is-active');
+  event.preventDefault();
+}
+
+menu.addEventListener('click', toggleMenu, false);
  
 const sidebar = document.querySelector('#sidebar');
  const sidebarToggler = document.querySelector('.sidebar_toggler');

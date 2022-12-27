@@ -60,7 +60,7 @@ nav a:active {
     text-shadow: 2px 2px 3px #ddeaf9;
 }
 
-.sidebar_content p {
+.menu p {
     margin-top: 10em;
     padding: 0.7em;
 }
@@ -108,89 +108,84 @@ h2 img {
 
 @media screen and (max-width:780px) {
 
-    #sidebar {
+    .menuX {
         position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        width: 65%;
-        height: 100%;
-        background-image: linear-gradient(to right, #514f50, whitesmoke);
-        box-shadow: 0 10px 20px -4px #000;
-        overflow-x: hidden;
-        overflow-y: auto;
-        pointer-events: none;
-        opacity: 0;
-        text-align: justify;
-        visibility: hidden;
-        transform: translateX(-100%);
-        transition: opacity 0.3s ease, visibility 0.2s ease, transform 0.3s ease;
-    }
-
-    #sidebar.show {
-        pointer-events: all;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    .sidebar_content {
-        pointer-events: none;
-        text-align: justify;
-    }
-
-    .sidebar_content a {
-        pointer-events: all;
-        font-size: 1.2em;
-    }
-
-    .side_navlinks ul {
-        display: grid;
-    }
-
-    .sidebar_toggler {
-        position: fixed;
-        top: 5vh;
-        right: 5vw;
-        width: 1.75rem;
-        height: 1.3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        right: 1em;
+        top: 1em;  
+        width: 2em;  
+        margin: 0.5em;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index: 100;
         cursor: pointer;
-        overflow: hidden;
-    }
-
-    .sidebar_toggler span {
-        background-color: #BB2649;
-        width: 100%;
-        height: 2.4px;
-        transition: all 0.3s ease;
-        pointer-events: none;
-
-    }
-
-    #sidebar.show+.sidebar_toggler {
-        justify-content: center;
-    }
-
-    #sidebar.show+.sidebar_toggler span {
-        margin-top: -1.2px;
-        margin-bottom: -1.2px;
-    }
-
-    #sidebar.show+.sidebar_toggler span:first-child {
-        transform: rotate(45deg);
-    }
-
-    #sidebar.show+.sidebar_toggler span:nth-child(2) {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+      }
+    
+      ._l{
+        border-bottom: 2px solid #BB2649;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        width: 1.8em;
+        height: 4px;
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+      }
+    
+      .menuX:hover .-arriba {
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+    
+      .menuX:hover .-abajo {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+      }
+    
+      .menuX.is-active .-arriba {
+        -webkit-transform: translateY(200%) rotate(48deg) !important;
+        -ms-transform: translateY(200%) rotate(48deg) !important;
+        transform: translateY(200%) rotate(48deg) !important;
+      }
+    
+      .menuX.is-active .-medio {
         opacity: 0;
-        transform: translateX(-100%);
-    }
+      }
+    
+      .menuX.is-active .-abajo {
+        -webkit-transform: translateY(-200%) rotate(132deg) !important;
+        -ms-transform: translateY(-200%) rotate(132deg) !important;
+        transform: translateY(-200%) rotate(132deg) !important;
+      }
+    
+      .menu.is-active {
+         transform: translate3d(0px, 0px, 0px); 
+      }
+    
+     .menu { 
+        width:55%;
+        height:100%;
+        overflow-y: scroll;
+        position: fixed;
+        background-image:linear-gradient(to right, #514f50, whitesmoke) ;
+        padding: 1em;
+        transform: translate3d(-100%, 0px, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+        z-index: 80;
+      }
 
-    #sidebar.show+.sidebar_toggler span:last-child {
-        transform: rotate(-45deg);
-    }
+       nav a{
+        font-size:1.2em;
+       }
 
     body {
         line-height: 4vh;
@@ -208,6 +203,7 @@ h2 img {
 
     main {
         margin-left: -0.5%;
+        
     }
     #bloque2 a{
         margin-left: 2.5em;
@@ -215,9 +211,11 @@ h2 img {
     }
     .certificaciones{
         margin-left: 2em;
+        text-align:left;
     }
     .estudios{
         margin-left: 2em;
+        text-align:left;
     }
     .especialidades{
         margin-left: 2em;
